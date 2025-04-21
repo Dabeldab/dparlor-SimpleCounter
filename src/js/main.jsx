@@ -16,13 +16,13 @@ let counter = 0;
 let chosenColor 
 
 //Random color selector
- const  randoColor =() => {
-  const color = ['red','blue','green','purple','white','yellow','cyan','orange','pink','gold','brown','gray']
-  return chosenColor= color[Math.floor(Math.random() * color.length)]
+const  randoColor =() => {
+const color = ['red','blue','green','purple','white','yellow','cyan','orange','pink','gold','brown','gray']
+return chosenColor= color[Math.floor(Math.random() * color.length)]
 }
 
 //Interval
-setInterval(() => {
+const timer = setInterval(() => {
   counter++
   let chosenColor = randoColor();
   
