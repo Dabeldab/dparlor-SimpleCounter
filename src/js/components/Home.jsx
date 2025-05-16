@@ -7,7 +7,7 @@ function calculateSeconds(aCounter, placeValue) {
     return Math.floor(aCounter / placeValue) % 10
 }
 
-const Home = ({counter,chosenColor= 'currentcolor'}) => {
+const Home = ({counter,chosenColor= 'currentcolor',onReset,onStop, onStart}) => {
     return(
         <>
         <SimpleCounter 
@@ -16,6 +16,10 @@ const Home = ({counter,chosenColor= 'currentcolor'}) => {
         tensDigit = {calculateSeconds(counter, 10)}
         onesDigit = {calculateSeconds(counter, 1)}
         color ={chosenColor}
+        onReset = {onReset}
+        onStop = {onStop}
+        onStart = {onStart}
+
         />
         </>
     )

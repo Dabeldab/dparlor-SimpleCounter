@@ -9,6 +9,9 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body {
+    background-color: blue;
+}
 svg {
     color: rgb(255, 255, 255);
     height: 330px;
@@ -16,13 +19,16 @@ svg {
     margin-left: 60px;
     
 }
+.btn btn-warning {
+    border-right: 30px;
+}
 .counter-display {
     display: flex;    
     margin: auto;
     margin-top: 100px;
     background-color: rgb(0, 0, 0);
     height: 300px;
-    width: 650px;
+    width: 680px;
     border-radius: 30px;
 
 }
