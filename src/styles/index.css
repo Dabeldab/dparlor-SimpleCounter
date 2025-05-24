@@ -19,9 +19,35 @@ svg {
     margin-left: 60px;
     
 }
-.btn btn-warning {
-    border-right: 30px;
+.reset {
+    border-radius: 20px 0px 0px 20px;
+    background-color: orange;
 }
+
+.stop {
+    margin-left: 910px;
+    background-color: white;
+    color: gray;
+    border-radius: 10px;
+    font-size: 30px;
+    width: 100px;
+}
+.countdown {
+    margin-left: 860px;
+    background-color: white;
+    color: gray;
+    border-radius: 10px;
+    font-size: 30px;
+    width: 200px;
+}
+
+
+#btn{
+    border-radius: 0px 20px 20px 0;
+    background-color: red;
+    
+}
+
 .counter-display {
     display: flex;    
     margin: auto;

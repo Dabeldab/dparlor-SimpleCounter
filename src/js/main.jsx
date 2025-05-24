@@ -11,9 +11,10 @@ import '../styles/index.css'
 import Home from './components/Home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-let counter = 0;
+let counter ;
 let chosenColor 
 let timer;
+let go;
 
 //Random color selector
 const  randoColor =() => {
@@ -23,24 +24,39 @@ return chosenColor= color[Math.floor(Math.random() * color.length)]
 
 //Interval
 const startTimer = () => {
+  counter = 0
   timer = setInterval(() => {
+    
     counter++;
     chosenColor = randoColor();
-    root.render(<Home counter={counter} chosenColor={chosenColor} onReset={reset} onStop={stop} onStart={startTimer}/>);
+    if (counter === 10) alert("10 is a cool number") 
+    root.render(<Home counter={counter} chosenColor={chosenColor} onReset={reset} onStop={stop} onStart={startTimer} onCountdown={countDown}/>);
   }, 1000);
 }
 
   // Reset function
 const reset = () => {
   counter = 0;
-    root.render(<Home counter={counter} chosenColor={chosenColor} onReset={reset} onStop={stop} onStart={startTimer}/>);
+    root.render(<Home counter={counter} chosenColor={chosenColor} onReset={reset} onStop={stop} onStart={startTimer} onCountdown={countDown}/>);
+}
 
+const countDown = () => {
+  console.log("triggered countdown")
+ stop()
+  counter = 5
+  go = setInterval(() => {
+    counter -= 1
+    if (counter == 0) {stop(); alert("Time is up")}
+         
+    root.render(<Home counter={counter} chosenColor={chosenColor} onReset={reset} onStop={stop} onStart={startTimer} onCountdown={countDown}/>);
+  }, 1000)
 }
 
 // Stop function
 const stop = () => {
-  clearInterval(timer);
-    root.render(<Home counter={counter} chosenColor={chosenColor} onReset={reset} onStop={stop} onStart={startTimer}/>);
+  if (timer) clearInterval(timer);
+  if (go) clearInterval(go)
+  root.render(<Home counter={counter} chosenColor={chosenColor} onReset={reset} onStop={stop} onStart={startTimer} onCountdown={countDown}/>);
 
 }
 

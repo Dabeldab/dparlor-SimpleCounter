@@ -7,7 +7,7 @@ function calculateSeconds(aCounter, placeValue) {
     return Math.floor(aCounter / placeValue) % 10
 }
 
-const Home = ({counter,chosenColor= 'currentcolor',onReset,onStop, onStart}) => {
+const Home = ({counter,chosenColor= 'currentcolor',onReset,onStop, onStart,onCountdown}) => {
     return(
         <>
         <SimpleCounter 
@@ -19,7 +19,7 @@ const Home = ({counter,chosenColor= 'currentcolor',onReset,onStop, onStart}) => 
         onReset = {onReset}
         onStop = {onStop}
         onStart = {onStart}
-
+        onCountdown = {onCountdown}
         />
         </>
     )
